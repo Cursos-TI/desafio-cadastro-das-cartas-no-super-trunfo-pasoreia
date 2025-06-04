@@ -9,7 +9,9 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
    
-    char estado[20],codigo_carta[10], cidade[20];
+    char estado[20];
+    char cidade[20];
+    char codigo_carta[10];
     unsigned long int populacao_a, populacao_b;
     float area_a, pib_a, super_a, capita_a, densidade_a;
     int turistico_a, turistico_b;
@@ -18,11 +20,12 @@ int main() {
     
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     printf("Cadastrar a primeira carta!\n" );
+    
     // Cadastro das Cartas:
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     //usuário completar o estado
     printf("Digite um estado: \n");
-    scanf("%s", &estado);
+    scanf("%c", &estado);
 
     //usuário colocar o código da carta
 
@@ -77,13 +80,13 @@ int main() {
     printf("Pib per Capita: %.2f reais\n", capita_a);
     
 
-    super_a = (a/densidade_a) + populacao_a + area_a + pib_a + turistico_a + densidade_a + capita_a;
-    printf("Super poder: %.2f", super_a);
+    super_a = (1/densidade_a) + populacao_a + area_a + pib_a + turistico_a + densidade_a + capita_a;
+    printf("Super poder: %.2f\n", super_a);
      //Cadastrando a segunda carta
 
-     printf("Vamos cadastrar a segunda carta!\n");
+    printf("Vamos cadastrar a segunda carta!\n");
 
-       printf("Digite um estado: \n");
+    printf("Digite um estado: \n");
     scanf("%s", &estado);
 
     //usuário colocar o código da carta
@@ -133,10 +136,22 @@ int main() {
     printf("População: %.lu\n", populacao_b);
     printf("Área: %.2f KM²\n", area_b);
     printf("PIB: %.2f bilhões de reais\n", pib_b);
-    printf("Super poder: %.2f", super_b);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_b);
+    printf("Pib per Capita: %.2f reais\n", capita_a);
+    printf("Super poder: %.2f\n", super_b);
 
     //calculando os atirbutos para termos o super poder da carta
     super_b=(1/densidade_b) + populacao_b + area_b + pib_b + turistico_b + capita_b;
+    
+
+    printf("População: %lu\n", populacao_a > populacao_a);
+    printf("Aréa: %f\n", area_a > area_b);
+    printf("PIB: %f\n", pib_a > pib_b);
+    printf("Densidade: %f\n", densidade_a < densidade_b);
+    printf("Pib per capita: %f\n", capita_a > capita_b);
+    printf("Super poder: %f\n", super_a > super_b);
+    
    
     return 0;
 }
+

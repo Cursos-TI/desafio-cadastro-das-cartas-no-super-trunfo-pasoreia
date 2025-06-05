@@ -9,13 +9,14 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
    
-    char estado[20];
-    char cidade[20];
-    char codigo_carta[10];
-    unsigned long int populacao_a, populacao_b;
+    char estado[30];
+    char cidade[30];
+    char codigo[30];
+    unsigned long int populacao_a, populacao_b,resultado1;
     float area_a, pib_a, super_a, capita_a, densidade_a;
     int turistico_a, turistico_b;
     float area_b, pib_b, super_b, capita_b, densidade_b;
+    float resultado2, resulato3, resultado4, resultado5, resultado6;
 
     
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
@@ -25,22 +26,25 @@ int main() {
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     //usuário completar o estado
     printf("Digite um estado: \n");
-    scanf("%c", &estado);
-
+    scanf("%s", &estado);
+    
     //usuário colocar o código da carta
 
     printf("Digite o código da carta,  podendo escolher entre A 01-04: \n");
-    scanf("%s", &codigo_carta);
+    scanf("%s", &codigo);
+    getchar();
 
     //usuário inserir a cidade desse estado
 
     printf("Digite uma cidade desse estado: \n");
-    scanf("%s", &cidade);
+    scanf("%s", &cidade[30]);
+    
 
     //usuário inserir a população dessa cidade
 
     printf("Digite a população: \n");
     scanf("%lu", &populacao_a);
+    
 
     //usuário inserir a area em km 
 
@@ -70,9 +74,9 @@ int main() {
 
     printf("carta 1\n");
     printf("Estado: %s\n", estado);
-    printf("Código: %s\n" , codigo_carta);
+    printf("Código: %s\n" , codigo);
     printf("Nome da cidade: %s\n", cidade);
-    printf("População: %.2f\n", populacao_a);
+    printf("População: %.lu\n", populacao_a);
     printf("Área: %.2f KM²\n", area_a);
     printf("PIB: %.2f bilhões de reais\n", pib_a);
     printf("Número de ponto turísticos: %d\n", turistico_a);
@@ -92,7 +96,7 @@ int main() {
     //usuário colocar o código da carta
 
     printf("Digite o código da carta,  podendo escolher entre B 01-04: \n");
-    scanf("%s", &codigo_carta);
+    scanf("%s", &codigo);
 
     //usuário inserir a cidade desse estado
 
@@ -102,7 +106,7 @@ int main() {
     //usuário inserir a população dessa cidade
 
     printf("Digite a população: \n");
-    scanf("%f", &populacao_b);
+    scanf("%lu", &populacao_b);
 
     //usuário inserir a area em km 
 
@@ -131,7 +135,7 @@ int main() {
 
     printf(" carta 2\n" );
     printf("Estado: %s\n", estado);
-    printf("Código: %s\n" , codigo_carta);
+    printf("Código: %s\n" , codigo);
     printf("Nome da cidade: %s\n", cidade);
     printf("População: %.lu\n", populacao_b);
     printf("Área: %.2f KM²\n", area_b);
@@ -142,14 +146,22 @@ int main() {
 
     //calculando os atirbutos para termos o super poder da carta
     super_b=(1/densidade_b) + populacao_b + area_b + pib_b + turistico_b + capita_b;
+
+    resultado1 =  populacao_a > populacao_b;
+    resultado2 = area_a > area_b;
+    resulato3 = pib_a > pib_b;
+    resultado4 = densidade_a < densidade_b;
+    resultado5 = capita_a > capita_b;
+    resultado6 = super_a > super_b;
+
     
 
-    printf("População: %lu\n", populacao_a > populacao_a);
-    printf("Aréa: %f\n", area_a > area_b);
-    printf("PIB: %f\n", pib_a > pib_b);
-    printf("Densidade: %f\n", densidade_a < densidade_b);
-    printf("Pib per capita: %f\n", capita_a > capita_b);
-    printf("Super poder: %f\n", super_a > super_b);
+    printf("População: %lu\n", resultado1);
+    printf("Aréa: %f\n",resultado2);
+    printf("PIB: %f\n", resulato3);
+    printf("Densidade: %f\n", resultado4);
+    printf("Pib per capita: %f\n", resultado5);
+    printf("Super poder: %f\n", resultado6);
     
    
     return 0;
